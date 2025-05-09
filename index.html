@@ -2,32 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AR Model Demo</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>AR Quick Launch</title>
   <style>
     body {
-      margin: 0;
-      text-align: center;
       font-family: sans-serif;
-      background: #f0f0f0;
+      text-align: center;
+      padding-top: 50px;
+      background: #f8f8f8;
     }
-    model-viewer {
-      width: 100vw;
-      height: 100vh;
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    img {
+      max-width: 200px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <model-viewer
-    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-    alt="A 3D model of an astronaut"
-    ar
-    ar-modes="scene-viewer webxr quick-look"
-    auto-rotate
-    camera-controls
-    ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz">
-  </model-viewer>
+  <h2>Experience 3D AR Model</h2>
+  <img src="https://modelviewer.dev/shared-assets/models/Astronaut.webp" alt="Model preview">
+  <br>
+
+  <a href="intent://arvr.google.com/scene-viewer/1.0?file=https://modelviewer.dev/shared-assets/models/Astronaut.glb&mode=ar_only&title=Astronaut#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://modelviewer.dev;end;">
+    <button>Launch in AR</button>
+  </a>
 
 </body>
 </html>
