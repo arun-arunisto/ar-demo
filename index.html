@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>AR Quick Launch</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
       padding-top: 50px;
       background: #f8f8f8;
+    }
+
+    model-viewer {
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      margin: 0 auto 30px;
     }
 
     button {
@@ -24,22 +32,22 @@
     button:hover {
       background-color: #0056b3;
     }
-
-    img {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
   </style>
 </head>
 <body>
 
   <h2>Experience 3D AR Model</h2>
-  <img src="https://modelviewer.dev/shared-assets/models/Astronaut.webp" alt="Model preview">
-  <br>
 
-  <a href="intent://raw.githubusercontent.com/arun-arunisto/ar-demo/main/congurent-triangle.glb#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://modelviewer.dev;end;">
-    <button>Launch in AR</button>
-  </a>
+  <model-viewer
+    src="https://raw.githubusercontent.com/arun-arunisto/ar-demo/main/congurent-triangle.glb"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    camera-controls
+    auto-rotate
+    alt="Congruent Triangle 3D model">
+  </model-viewer>
+
+  <p>Use your device's camera to view in AR (if supported).</p>
 
 </body>
 </html>
